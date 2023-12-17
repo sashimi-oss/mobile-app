@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Speech APIデモ</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="text" id="text" name="text" value="吾輩は猫である。" placeholder="読み上げたいテキストを入力してください" />
+    <button onclick="readAloud()">読み上げる</button>
+    <p>
+        上記テキストを読み上げます。<br>「読み上げる」ボタンをクリックしてください。
+    </p>
+    
+    <script>
+        // テキストを取得
+        function readAloud(){
+            const text = document.getElementById("text").value
+
+            if ('speechSynthesis' in window) {
+            const uttr = new SpeechSynthesisUtterance(text)
+            window.speechSynthesis.speak(uttr)
+            } else {
+                alert('大変申し訳ありません。このブラウザは音声合成に対応していません。')
+            }
+        }
+    </script>
+</body>
+</html>
