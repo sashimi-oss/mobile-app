@@ -1,4 +1,5 @@
 let selFile = document.getElementById('selectFile'); // input type="file"の要素取得
+let parent = document.getElementById('canvas-container');
 let canvas = document.getElementById('canvas'); // canvasの要素取得
 let ctx = canvas.getContext('2d');
 
@@ -20,8 +21,22 @@ selFile.addEventListener("change", function(evt){
    // canvasに画像ソースを設定する
   //  ctx.drawImage(img, 0, 0);
 
+  const imgWidth = img.naturalWidth;
+  const imgHeight = img.naturalHeight;
+
+
+
+  console.log(imgWidth, imgHeight);
+
+  canvas.width = imgWidth/2;
+  canvas.height = imgHeight/2;
+
+
+
+
+
    // 画像のサイズを設定する場合
-   ctx.drawImage(img, 0, 0, 400, 300); heightとwidthも合わせて設定可能
+   ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/2, imgHeight/2); //heightとwidthも合わせて設定可能
    }
   }
 }, false);
