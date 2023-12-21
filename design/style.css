@@ -9,7 +9,7 @@ canvas{
 }
 
 /* レスポンシブデザイン----------------------- */
-@media screen and (max-width:600px) {
+@media screen and (max-width:1024px) {
   .main{
     display: flex;
     flex-direction: column;
