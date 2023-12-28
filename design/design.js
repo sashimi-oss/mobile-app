@@ -2,6 +2,8 @@ let selFile = document.getElementById('selectFile'); // input type="file"の要�
 let parent = document.getElementById('canvas-container');
 let canvas = document.getElementById('canvas'); // canvasの要素取得
 let ctx = canvas.getContext('2d');
+canvas.width = 400;
+canvas.height = 300;
 
 selFile.addEventListener("change", function(evt){
  let file = evt.target.files; // fileの取得
