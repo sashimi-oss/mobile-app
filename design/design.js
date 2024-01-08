@@ -19,26 +19,26 @@ selFile.addEventListener("change", function(evt){
   img.src = dataUrl;
 
   // 画像が読み込んだ時に実行する
-　img.onload = function() {
-   // canvasに画像ソースを設定する
-  //  ctx.drawImage(img, 0, 0);
+  img.onload = function() {
+      // canvasに画像ソースを設定する
+      //  ctx.drawImage(img, 0, 0);
 
-  const imgWidth = img.naturalWidth;
-  const imgHeight = img.naturalHeight;
-
-
-
-  console.log(imgWidth, imgHeight);
-
-  canvas.width = imgWidth/2;
-  canvas.height = imgHeight/2;
+      const imgWidth = img.naturalWidth;
+      const imgHeight = img.naturalHeight;
 
 
 
+      console.log(imgWidth, imgHeight);
+
+      canvas.width = imgWidth/2;
+      canvas.height = imgHeight/2;
 
 
-   // 画像のサイズを設定する場合
-   ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/2, imgHeight/2); //heightとwidthも合わせて設定可能
+
+
+
+      // 画像のサイズを設定する場合
+      ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/2, imgHeight/2); //heightとwidthも合わせて設定可能
    }
   }
 }, false);
