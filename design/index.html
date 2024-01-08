@@ -2,6 +2,7 @@
   <html>
    <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://unpkg.com/tesseract.js@v3.0.3/dist/tesseract.min.js"></script>
    </head>
    <body>
     <main class="main">
@@ -9,9 +10,15 @@
         <input type="file" id="selectFile" accept=".png,.jpeg">
       </label>
       <div class="canvas-container">
-        <canvas id="canvas" width="800" height="600"><canvas>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <!--現段階の表示-->
+        <p id="progress"></p>
 
       </div>
+      <!--OCRの結果-->
+      <p id="result"></p>
+      <!--表示結果を読み上げさせるボタン-->
+      <button id="read" onclick="OnButtonRead()">読み上げ</button>
 
     </main>
   

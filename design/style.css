@@ -1,6 +1,3 @@
-body{
-  
-}
 
 
 .main{
@@ -36,6 +33,8 @@ canvas{
   border: solid 1px #000;
 }
 
+
+
 /* レスポンシブデザイン----------------------- */
 @media screen and (max-width:1024px) {
   .main{
@@ -60,11 +59,20 @@ canvas{
   #selectFile {
     display: none;
   }
+
   
   canvas{
     /* width: 400px;
     height: 300px; */
     border: solid 1px #000;
+  }
+
+  #result {
+    font-size: 35px;
+  }
+
+  #read {
+    font-size: 30px;
   }
 
 }

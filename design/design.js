@@ -26,22 +26,52 @@ selFile.addEventListener("change", function(evt){
       const imgWidth = img.naturalWidth;
       const imgHeight = img.naturalHeight;
 
-
-
       console.log(imgWidth, imgHeight);
 
-      canvas.width = imgWidth/2;
-      canvas.height = imgHeight/2;
-
-
-
-
+      canvas.width = imgWidth/3;
+      canvas.height = imgHeight/3;
 
       // 画像のサイズを設定する場合
-      ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/2, imgHeight/2); //heightとwidthも合わせて設定可能
+      ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/3, imgHeight/3); //heightとwidthも合わせて設定可能
+
+
+
+      
+      /*recognizeメソッドでOCR開始*/
+      Tesseract.recognize(
+          img,
+          /*日本語テキストを認識*/
+          'jpn',
+          { 
+              /*進捗情報を取得、どちらでもよいがあった方が親切*/
+              logger: function(m) {
+                  document.getElementById("progress").textContent = m.status;
+              }
+          }
+      )
+      /*OCR(recognize)終了後、結果を渡す*/
+      /*非同期処理のため.then */
+      .then(function(result){
+          document.getElementById("result").textContent = result.data.text;
+      });
    }
   }
 }, false);
+
+function OnButtonRead(){
+  /*Web Speech API機能 */
+  /*読み上げるテキストを取得*/
+  let textRead = document.getElementById("result").textContent;
+  /*speechSynthesisインターフェイスにアクセス*/
+  let synth = window.speechSynthesis;
+
+  /*新しいインスタンス生成*/
+  let utterance = new SpeechSynthesisUtterance(textRead);
+
+  utterance.lang ="ja-JP";
+  /*WebSpeechAPIに指定されたテキストを読み上げさせる*/
+  synth.speak(utterance);
+}
 
 
 
