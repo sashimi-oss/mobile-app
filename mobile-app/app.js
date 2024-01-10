@@ -67,7 +67,7 @@ function OnButtonRead(){
   let synth = window.speechSynthesis;
 
   /*新しいインスタンス生成*/
-  if(textRead="金沢駅はこの先です"){
+  if(textRead=="金沢駅はこの先です"){
     textRead = "かなざわえきはこのさきです"; 
   }
   let utterance = new SpeechSynthesisUtterance(textRead);
