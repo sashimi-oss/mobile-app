@@ -50,12 +50,10 @@ canvas{
   label {
     margin-top: 50px;
     margin-bottom: 10rem;
-
     background-color: skyblue;
     font-size: 3rem;
     border-radius: 50px;
-    order: 2;
-
+    order: 4;
   }
 
   #selectFile {
@@ -67,14 +65,17 @@ canvas{
     /* width: 400px;
     height: 300px; */
     border: solid 1px #000;
+    order: 1;
   }
 
   #result {
     font-size: 35px;
+    order: 2;
   }
 
   #read {
     font-size: 30px;
+    order: 3;
   }
 
 }
