@@ -28,11 +28,11 @@ selFile.addEventListener("change", function(evt){
 
       console.log(imgWidth, imgHeight);
 
-      canvas.width = imgWidth/3;
-      canvas.height = imgHeight/3;
+      canvas.width = imgWidth;
+      canvas.height = imgHeight;
 
       // 画像のサイズを設定する場合
-      ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth/3, imgHeight/3); //heightとwidthも合わせて設定可能
+      ctx.drawImage(img, 0, 0, imgWidth, imgHeight, 0, 0, imgWidth, imgHeight); //heightとwidthも合わせて設定可能
 
 
 
